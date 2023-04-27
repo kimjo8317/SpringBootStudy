@@ -2,7 +2,7 @@ package com.mysite.sbb;
 
 import lombok.Getter;
 
-@Getter
+@Getter1
 //@Setter
 public class HelloLombok {
 
