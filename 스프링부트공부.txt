@@ -1,12 +1,62 @@
-인텔리제이포트확인 = run -> Edit configurations
+*인텔리제이포트확인 = run -> Edit configurations
 
-엔티티(entity)=
+*엔티티(entity)=
 데이터베이스 테이블과 매핑되는 자바클래스
 모델 또는 도메인모델 이라고도 부른다
 
-리파지토리(Repository)=
+*리파지토리(Repository)=
 엔티티만으로는 db데이터를 저장 조회불가능 ->
 실제db와 연동하는 JPA리포지터리,
 findall/save 등 테이블에 접근하는 메서드를 사용하기 위한 "인터페이스"
-(CRUD)를 어떻게 처리할지 정희하는것이 리포지토리
+(CRUD)를 어떻게 처리할지 정의하는것이 리포지토리
+JPA리포지토리 종류 
+findAll , findId , findSubject ,findBySubjectAndContent ,findBySubjectLike
 
+*<>는 generic 은 객체의 타입을 지정해주는것 
+
+*Optional<> = Wrapper클래스로 null 값을 유연하게 처리하는 클래스
+
+*Dependency Injecjection = DI란? = 의존성 주입
+JpaRepository 를상속한 "객체"가 생성될때 DI에의해 자동으로 
+"객체"에 의존성 주입, 이때 프록시패턴(대리)이 사용됨 
+
+*model
+public  String ""(Model model){}
+"model"객체는 자바클래스와 템플릿간의 연결고리역할을함
+객체로 값을 담아주면 템플릿에서 그값을 사용할수있음
+request.setAttribute() 와 비슷한 역할을함 (데이터저장)
+
+
+*@Transactional 
+메서드는 메서드가 포함하고 있는 작업 중에 하나라도 실패할 경우
+전체 작업을 취소한다.
+
+*@ResponseBidy
+자바 객체를 HTTP 응답 본문의 객체로 변환하여 클라이언트로 전송
+
+*@RequiredArgsConstructor 
+클래스에 선언된 final 변수들, 
+필드들을 매개변수로 하는 생성자를 자동으로 생성해줌(getter,setter)
+
+*@Autowired
+필요한 의존 객체의 “타입"에 해당하는 빈을 찾아 주입한다.
+
+
+
+--------------------------------------------------------------------------------------
+
+타임리프
+3가지특징 반복,분기,텍스트
+
+*반복문속성
+<tr> ... </tr> = 객수만큼 반복해서 출력하는 역할을함 //자바의for,each
+
+*th: 
+자바코드와 연결되는 속성
+
+*분기문속성
+th:if="${question != null}"
+퀘스쳔객체가 null이 아닌경우에 해당 엘리먼트 표시
+
+*텍스트 속성
+[[ ]] 대괄호로 직접출력가능
